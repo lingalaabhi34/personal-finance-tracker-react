@@ -4,8 +4,7 @@ import Button from "../Button/Button";
 function Cards({
   showExpenseModal,
   showIncomeModal,
-  handleExpenseCancel,
-  handleIncomeCancel,
+  
   income,
   expense,
   totalBalance
