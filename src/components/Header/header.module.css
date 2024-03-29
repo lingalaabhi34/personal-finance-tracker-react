@@ -1,0 +1,9 @@
+.btn{
+    background-color: #296ffd;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 60px;
+
+}
