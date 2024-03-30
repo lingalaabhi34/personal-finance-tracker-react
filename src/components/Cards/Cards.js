@@ -1,36 +1,37 @@
+import React from "react";
 import { Card, Row } from "antd";
-import React, { useState } from "react";
 import Button from "../Button/Button";
-function Cards({
+import cardStyles from "./card.module.css";
+
+const Cards = ({
   showExpenseModal,
   showIncomeModal,
-  
   income,
   expense,
-  totalBalance
-}) {
-  // console.log(income,expense,totalBalance);
+  totalBalance,
+  resetBalance,
+}) => {
   return (
     <div>
-      <Row>
-        <Card >
-          <p> current Balance</p>
-          <p>{totalBalance}</p>
-          <Button text="Reset Balance" />
+      <Row className={cardStyles.main}>
+        <Card className={cardStyles.card}>
+          <h1>Current Balance</h1>
+          <h3>₹ {totalBalance}</h3>
+          <Button text="Reset Balance" onClick={resetBalance} />
         </Card>
-        <Card >
-          <p>Income</p>
-          <p> {income}</p>
+        <Card className={cardStyles.card}>
+          <h1>Income</h1>
+          <h3>₹ {income}</h3>
           <Button text="Add Income" onClick={showIncomeModal} />
         </Card>
-        <Card >
-          <p>Expenses</p>
-          <p> {expense}</p>
+        <Card className={cardStyles.card}>
+          <h1>Expenses</h1>
+          <h3>₹ {expense}</h3>
           <Button text="Add Expense" onClick={showExpenseModal} />
         </Card>
       </Row>
     </div>
   );
-}
+};
 
 export default Cards;

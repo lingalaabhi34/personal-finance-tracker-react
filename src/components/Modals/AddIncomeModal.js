@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Modal, Form, Input, DatePicker, Select } from "antd";
-import moment from "moment"; // Import moment library
+import moment from "moment";
 import Title from "antd/es/skeleton/Title";
 
 function AddIncomemodal({
@@ -21,8 +21,6 @@ function AddIncomemodal({
         form={form}
         layout="vertical"
         onFinish={(values) => {
-          // Convert date to moment object
-          values.date = moment(values.date).format("YYYY-MM-DD");
           onFinish(values, "income");
           form.resetFields();
         }}

@@ -5,7 +5,7 @@ import tansactiontable from "./transactiontable.css";
 import searchimg from "../../Assests/icons8-search.svg";
 import { parse, unparse } from "papaparse";
 import { toast } from "react-toastify";
-import moment from 'moment'; // Import moment for date formatting
+import moment from "moment";
 
 function Transactiontable({ transactions, fetchtransaction, addTransaction }) {
   const [search, setSearch] = useState("");
@@ -34,10 +34,10 @@ function Transactiontable({ transactions, fetchtransaction, addTransaction }) {
       key: "type",
     },
     {
-        title: "Date",
-        dataIndex: "date",
-        key: "date",
-       
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+      render: (text) => moment(text).format("YYYY-MM-DD"),
     },
   ];
 
@@ -62,7 +62,7 @@ function Transactiontable({ transactions, fetchtransaction, addTransaction }) {
         type: transaction.type,
         tag: transaction.tag,
         date: transaction.date, // Ensure date field is correctly formatted
-        
+
         amount: transaction.amount,
       }))
     );
@@ -85,12 +85,12 @@ function Transactiontable({ transactions, fetchtransaction, addTransaction }) {
           for (const transactions of results.data) {
             console.log("transactions", transactions);
             const newTransactions = {
-                // name: transactions.name,
-                // type: transactions.type,
-                // tag: transactions.tag,
-                // date: transactions.date, // Ensure date field is correctly formatted
-                // amount: transactions.amount,
-                ...transactions,
+              // name: transactions.name,
+              // type: transactions.type,
+              // tag: transactions.tag,
+              // date: transactions.date, // Ensure date field is correctly formatted
+              // amount: transactions.amount,
+              ...transactions,
               amount: parseFloat(transactions.amount),
             };
             await addTransaction(newTransactions, true);
@@ -104,8 +104,6 @@ function Transactiontable({ transactions, fetchtransaction, addTransaction }) {
       toast.error(e.message);
     }
   };
-
-
 
   return (
     <div>
@@ -131,28 +129,39 @@ function Transactiontable({ transactions, fetchtransaction, addTransaction }) {
       </div>
       <div>
         <h2>My Transactions</h2>
-        <Radio.Group
-          onChange={(e) => setSortkey(e.target.value)}
-          value={sortkey}
-        >
-          <Radio.Button value="">Default</Radio.Button>
-          <Radio.Button value="date">Sort by Date</Radio.Button>
-          <Radio.Button value="amount">Sort by Amount</Radio.Button>{" "}
-          {/* Corrected the value */}
-        </Radio.Group>
-        <button onClick={exporttocsv}>Export to CSV</button>
-        {/* <button onClick={importfromcsv}>Import from CSV</button> */}
-        <label htmlFor="file-csv">Import from CSV</label>
-        <input
-          id="file-csv"
-          type="file"
-          accept=".csv"
-          required
-          style={{ display: "none" }}
-          onChange={importfromcsv} // Add onChange handler
-        />
+        <div className="sorting">
+          <Radio.Group
+            onChange={(e) => setSortkey(e.target.value)}
+            value={sortkey}
+          >
+            <Radio.Button value="">Default</Radio.Button>
+            <Radio.Button value="date">Sort by Date</Radio.Button>
+            <Radio.Button value="amount">Sort by Amount</Radio.Button>{" "}
+          </Radio.Group>
+          <div className="csv">
+            <button onClick={exporttocsv} className="exportcsv">
+              Export to CSV
+            </button>
+
+            <label htmlFor="file-csv" className="different">
+              Import from CSV
+            </label>
+            <input
+              id="file-csv"
+              type="file"
+              accept=".csv"
+              required
+              style={{ display: "none" }}
+              onChange={importfromcsv} // Add onChange handler
+            />
+          </div>
+        </div>
       </div>
-      <Table dataSource={sortedTransactions} columns={columns} />
+      <Table
+        dataSource={sortedTransactions}
+        columns={columns}
+        className="table"
+      />
     </div>
   );
 }

@@ -122,7 +122,7 @@ export default function Signup() {
             createdAt: new Date()
           })
             .then(() => {
-              toast.success("Document created successfully");
+              // toast.success("Document created successfully");
             })
             .catch((error) => {
               console.error("Error creating document:", error);
@@ -141,9 +141,9 @@ export default function Signup() {
   
 
   return (
-    <div className={signup.signup}>
+    <div className={signup.main}>
       {loading ? (
-        <>
+        <div className={signup.login}>
           <h1>Login Financely</h1>
           <form onSubmit={loginWithEmail}>
             <Input
@@ -160,14 +160,14 @@ export default function Signup() {
               value={password}
               setstate={setPassword}
             />
-            <Button text="Login with Email" type="submit" onClick={loginWithEmail} />
+            <Button text="Login with Email" type="submit" onClick={loginWithEmail} className={signup.signupbutton}/>
           </form>
           <p>or</p>
-          <Button text="Login with Google" onClick={loginWithGoogle} />
-          <p onClick={() => setLoading(!loading)}>Don't Have An Account? Click Here</p>
-        </>
+          <Button text="Login with Google" onClick={loginWithGoogle} className={signup.signupbutton}/>
+          <p onClick={() => setLoading(!loading)}>Don't Have An Account? <span style={{color:"blue",margin:"4px"}}>Click Here</span></p>
+        </div>
       ) : (
-        <>
+        <div className={signup.signup}>
           <h1>Sign Up On Financely</h1>
           <form onSubmit={signupWithEmail}>
             <Input
@@ -198,12 +198,12 @@ export default function Signup() {
               value={confirmPassword}
               setstate={setConfirmPassword}
             />
-            <Button text="Signup with Email" type="submit" onClick={signupWithEmail}/>
+            <Button text="Signup with Email" type="submit" onClick={signupWithEmail} className={signup.signupbutton}/>
           </form>
           <p>or</p>
-          <Button text="Signup with Google" onClick={signupWithGoogle} />
-          <p onClick={() => setLoading(!loading)}>Have An Account? Click Here</p>
-        </>
+          <Button text="Signup with Google" onClick={signupWithGoogle} className={signup.signupbutton}/>
+          <p onClick={() => setLoading(!loading)}>Have An Account? <span style={{color:"blue",margin:"4px"}}>Click Here</span></p>
+        </div>
       )}
     </div>
   );

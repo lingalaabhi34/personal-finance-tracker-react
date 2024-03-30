@@ -1,7 +1,101 @@
-.signup{
+.main {
+  width: 480px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 520px;
+  margin-top: 80px;
+  border: 2px solid black;
+  padding: 0px;
+  border: none;
+  box-shadow: 0 5px 15px gray;
+  border-radius: 30px;
+}
+.signup {
+  /* gap: 10px; */
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding-bottom: 8px; */
+  box-sizing: border-box;
+  label {
+    font-size: medium;
+    font-weight: 600;
+    /* padding-bottom: 7px; */
+    /* margin-bottom: 6px; */
+  }
+
+  form {
+    gap: 10px;
+    /* padding-bottom: 10px; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 100px;
+    gap: 5px !important;
+    /* padding-bottom: 10px; */
+    margin-bottom: 2px !important;
+  }
+  input {
+    width: 350px;
+    height: 25px;
+    /* border: none;  */
+    border-radius: 5px;
+    border: 0.5px 0.5px 0.5px 0.5px solid gray;
+  }
+}
+/* className={signup.signupbutton} */
+.signupbutton {
+  width: 350px;
+  height: 30px;
+  color: white;
+  background-color: #2664ff;
+  font-weight: 600;
+  font-size: medium;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+}
+/* h1{
+    font-weight: 700;
+    font-size: x-large;
+    margin-bottom: 5px;
+} */
+.login {
+  /* gap: 10px; */
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding-bottom: 8px; */
+  box-sizing: border-box;
+  label {
+    font-size: medium;
+    font-weight: 600;
+    /* padding-bottom: 7px; */
+    /* margin-bottom: 6px; */
+  }
+
+  form {
+    gap: 10px;
+    /* padding-bottom: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px !important;
+    /* padding-bottom: 10px; */
+    margin-bottom: 2px !important;
+  }
+  input {
+    width: 350px;
+    height: 25px;
+    /* border: none;  */
+    border-radius: 5px;
+    border: 0.5px 0.5px 0.5px 0.5px solid gray;
+  }
 }

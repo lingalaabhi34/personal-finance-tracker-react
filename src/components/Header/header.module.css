@@ -1,9 +1,34 @@
-.btn{
-    background-color: #296ffd;
-    color: whitesmoke;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0px 60px;
-
+.btn {
+  background-color: #296ffd;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 60px;
+  width: 92vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    font-size: x-large;
+    font-weight: 700;
+  }
+}
+.photo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  img {
+    height: 40px;
+    border-radius: 50%;
+  }
+  h3 {
+    font-size: large;
+    font-weight: 600;
+  }
+  h3:hover {
+    cursor: pointer;
+  }
 }

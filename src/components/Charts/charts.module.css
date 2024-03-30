@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  margin-left: 50px;
+  width: 90%;
+  height: 600px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  gap: 90px;
+}
+canvas {
+  height: 400px !important;
+}
+.chart {
+  width: 70%;
+  height: 550px;
+  box-shadow: 0 5px 10px gray;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.pie {
+  width: 30%;
+  box-sizing: border-box;
+  height: 550px;
+  box-shadow: 0 5px 10px gray;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
