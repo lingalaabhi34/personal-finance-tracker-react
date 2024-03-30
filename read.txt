@@ -1,0 +1,30 @@
+//    const importfromcsv = (e) => {
+//       e.preventDefault();
+//       try {
+//           const file = e.target.files[0];
+//           if (!file) return; // No file selected
+
+//           parse(file, {
+//               header: true,
+//               complete: async function (results) {
+//                   for (const transaction of results.data) {
+//                       console.log("transactions", transaction);
+//                       const newTransaction = {
+//                           ...transaction,
+//                           amount: parseFloat(transaction.amount),
+//                       };
+//                       await addTransaction(newTransaction, true);
+//                   }
+//                  // Clear file input
+//               },
+//               error: function (err) {
+//                   toast.error("Error parsing CSV file: " + err.message);
+//               }
+//           });
+//           toast.success("All transactions Added");
+//           fetchtransaction();
+//           e.target.value = null;
+//       } catch (err) {
+//           toast.error("Error importing transactions: " + err.message);
+//       }
+//   }

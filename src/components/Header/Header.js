@@ -34,6 +34,7 @@ catch(e){
   return (
     <div className={header.btn}>
       <h2>Financly.</h2>
+   
       <h2 onClick={logoutfn}>Logout</h2>
     </div>
   )
